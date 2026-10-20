@@ -1,0 +1,126 @@
+body {
+  background: linear-gradient(135deg,#003366,#007bff);
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin:0;
+  padding:20px;
+  color:#333;
+}
+
+.container h1 {
+  text-align:center;
+  color:#fff;
+  margin-bottom:30px;
+}
+
+.lista {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card {
+  background:#fff;
+  border-radius:12px;
+  padding:20px;
+  text-align:center;
+  box-shadow:0 0 15px rgba(0,0,0,0.1);
+  cursor:pointer;
+  transition:transform 0.3s ease;
+}
+
+.card:hover { transform:translateY(-5px); }
+
+.card img {
+  width:80px;
+  height:80px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:10px;
+}
+
+.card h3 { color:#002b80; margin-bottom:5px; }
+
+/* ===== Modal ===== */
+.modal {
+  display:none;
+  position:fixed;
+  z-index:1000;
+  left:0; top:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background:#fff;
+  margin:5% auto;
+  padding:20px;
+  border-radius:12px;
+  width:90%;
+  max-width:500px;
+  text-align:center;
+  animation:fadeIn 0.5s ease;
+}
+
+.close {
+  float:right;
+  font-size:1.5rem;
+  cursor:pointer;
+  color:#dc3545;
+}
+
+.perfil-foto {
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:15px;
+}
+
+.btn {
+  background:#007bff;
+  color:#fff;
+  border:none;
+  padding:10px 15px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-top:10px;
+}
+.alert.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.btn-delete {
+  background:#dc3545;
+  color:#fff;
+  border:none;
+  padding:10px 15px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-top:10px;
+  transition:0.3s;
+}
+
+.btn-delete:hover {
+  background:#b02a37;
+}
+
+.btn:hover { background:#0056b3; }
+
+/* ===== Responsividade ===== */
+@media(max-width:480px){
+  .card img { width:60px; height:60px; }
+  .perfil-foto { width:100px; height:100px; }
+  .modal-content { width:95%; }
+}
+
+/* ===== Animação ===== */
+@keyframes fadeIn {
+  from { opacity:0; transform:translateY(-20px); }
+  to { opacity:1; transform:translateY(0); }
+}

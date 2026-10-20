@@ -1,0 +1,150 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+/* ======= Sidebar ======= */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 240px;
+  background-color: #002b80;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  transition: width 0.3s;
+   opacity: 0;
+  transform: translateX(-20px);
+  animation: aparecer 2s ease forwards;
+
+}
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #00bfff;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+.sidebar a:hover {
+  background-color: #00bfff;
+  color: #fff;
+}
+.sidebar i {
+  font-size: 18px;
+}
+
+
+/* ======= Conteúdo Principal ======= */
+.main-content {
+  margin-left: 240px;
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+   opacity: 0;
+  transform: translateX(20px);
+  animation: aparecer 2s ease forwards;
+
+}
+header h1 {
+  color: #002b80;
+}
+header .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header .user-info i {
+  color: #002b80;
+}
+
+/* ======= Cards ======= */
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+   opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 2.5s ease forwards;
+
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card i {
+  font-size: 40px;
+  color: #00bfff;
+  margin-bottom: 10px;
+}
+.card h3 {
+  color: #002b80;
+  margin-bottom: 5px;
+}
+.logout {
+  margin-top:auto;
+  background:#dc3545;
+  color:#fff;
+  text-align:center;
+  border-radius:6px;
+  padding:10px;
+}
+
+
+/* ======= Responsividade ======= */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px;
+  }
+  .sidebar h2 {
+    display: none;
+  }
+  .sidebar a span {
+    display: none;
+  }
+  .main-content {
+    margin-left: 70px;
+  }
+}
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+}
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

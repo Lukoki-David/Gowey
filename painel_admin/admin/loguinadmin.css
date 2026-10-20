@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #002b80, #00bfff);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container */
+.login-container {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: aparecer 2s ease forwards;
+
+}
+@keyframes aparecer {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo */
+.login-container .logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #002b80;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 2s ease forwards;
+}
+
+/* Campos */
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 3.5s ease forwards;
+}
+.form-group label {
+  font-weight: 600;
+  color: #002b80;
+  margin-bottom: 8px;
+  display: block;
+}
+.form-group input {
+  width: 93%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+.form-group input:focus {
+  border-color: #00bfff;
+  outline: none;
+}
+.alert .error{
+background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #c6f5c8;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}  
+
+/* Botão */
+.btn-login {
+  width: 100%;
+  padding: 14px;
+  background: #002b80;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecer 4s ease forwards;
+}
+.btn-login:hover {
+  background: #00bfff;
+}
+
+/* Link */
+.login-container .extra {
+  margin-top: 15px;
+  font-size: 14px;
+}
+.login-container .extra a {
+  color: #002b80;
+  text-decoration: none;
+}
+.login-container .extra a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 25px;
+  }
+}
