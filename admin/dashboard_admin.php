@@ -1,11 +1,12 @@
 <?php
 session_start();
-
+require_once __DIR__ . '../config/conexao_gowey.php';
 // Verifica se admin está logado
 if (!isset($_SESSION['user_id'])) {
     header("Location: loguinadmin.php"); 
     exit;
 }
+
 ?>
 
 
@@ -24,7 +25,7 @@ if (!isset($_SESSION['user_id'])) {
 <!-- Sidebar -->
 <div class="sidebar">
   <h2>GoWey Admin</h2>
-  <a href="cadastro_escolas.php"><i class="fa-solid fa-school"></i><span>Cadastrar Escolas</span></a>
+  <a href="../admin/cadastro_escolas.php"><i class="fa-solid fa-school"></i><span>Cadastrar Escolas</span></a>
   <a href="#"><i class="fa-solid fa-bus"></i><span>Gerir Veículos</span></a>
   <a href="#"><i class="fa-solid fa-user-tie"></i><span>Motoristas</span></a>
   <a href="escolas_cadastradas.php"><i class="fa-solid fa-star"></i><span>Escolas Cadastradas</span></a>

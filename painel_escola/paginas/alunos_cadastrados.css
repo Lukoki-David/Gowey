@@ -39,6 +39,60 @@ body {
   margin-bottom:20px;
   font-weight:600;
 }
+/* CONTAINER DA PESQUISA */
+.pesquisa-container {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.form-pesquisa {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+.pesquisa-input {
+    flex: 1;
+}
+.pesquisa-input input {
+    width: 98%;
+    height: 45px;
+    padding: 0 16px;
+    border: 1px solid #dce1e8;
+    border-radius: 10px;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: 0.3s;
+}
+.pesquisa-input input:focus {
+    border-color: #002b80;
+
+    box-shadow: 0 0 0 3px rgba(0, 43, 128, 0.10);
+}
+.pesquisa-input input::placeholder {
+    color: #9ca3af;
+}
+.btn-pesquisar {
+    height: 48px;
+    padding: 0 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #002b80;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-pesquisar:hover {
+    background-color: #001f5c;
+}
 
 table {
   width:100%;
@@ -59,7 +113,9 @@ th, td {
   text-align:center;
   border-bottom:1px solid #ddd;
 }
-
+.totalAlunos{
+  color: #fff;
+}
 tr:hover { background:#f1f1f1; cursor:pointer; }
 
 .btn-excluir {
@@ -122,4 +178,29 @@ tr:hover { background:#f1f1f1; cursor:pointer; }
 @keyframes fadeIn {
   from { opacity:0; transform:translateY(-20px); }
   to { opacity:1; transform:translateY(0); }
+}
+/* RESPONSIVIDADE barra de pesquisa */
+@media (max-width: 600px) {
+
+    .form-pesquisa {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pesquisa-input {
+        width: 100%;
+    }
+
+    .btn-pesquisar {
+        width: 100%;
+    }
+
+}
+
+.btn-limpar-pesquisa{
+background-color: #721c24;
+color: whitesmoke;
+padding: 14px 19px;
+border-radius: 13px;
+text-decoration: none;
 }
